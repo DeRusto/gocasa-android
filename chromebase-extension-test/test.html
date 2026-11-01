@@ -1,0 +1,66 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GoCasa Chromebase test</title>
+<style>
+  body { font: 16px system-ui, sans-serif; max-width: 60rem; margin: 1rem auto; padding: 0 1rem; }
+  section { border: 1px solid #ccc; border-radius: 8px; padding: .5rem 1rem; margin: .75rem 0; }
+  h2 { font-size: 1.05rem; margin: .5rem 0; }
+  button { font: inherit; padding: .35rem .8rem; margin: .2rem .2rem .2rem 0; }
+  input[type=text] { font: inherit; width: 22rem; max-width: 100%; }
+  code, pre { font: 13px ui-monospace, monospace; background: #f3f3f3; }
+  pre { padding: .5rem; overflow: auto; max-height: 24rem; white-space: pre-wrap; }
+  video { width: 160px; background: #000; vertical-align: middle; }
+</style>
+<h1>GoCasa Chromebase test</h1>
+<p>Browser: <code id="ua"></code></p>
+
+<section>
+  <h2>1. Camera grant</h2>
+  <p>Grant the camera here once and pick <b>Allow on every visit</b>. Permission: <b id="perm">?</b></p>
+  <button id="grant">Grant camera here</button>
+  <video id="preview" autoplay muted playsinline></video>
+</section>
+
+<section>
+  <h2>2. Offscreen camera</h2>
+  <button data-cmd="startCamera">Start offscreen camera</button>
+  <button data-cmd="stopCamera">Stop</button>
+  <p>Frames: <b id="frames">–</b> · motion score: <b id="score">–</b> · last update: <b id="at">–</b></p>
+</section>
+
+<section>
+  <h2>3. Keep awake and wake</h2>
+  <p>Current: <b id="awake">–</b></p>
+  <button data-awake="display">Keep display on</button>
+  <button data-awake="system">Keep system on (display may sleep)</button>
+  <button data-awake="">Release</button>
+  <p><label><input type="checkbox" id="wakeOnMotion"> Call <code>reportActivity()</code> on motion</label>
+     · threshold <input type="number" id="threshold" min="1" max="100" step="1" style="width:5rem"></p>
+</section>
+
+<section>
+  <h2>4. Bridge from the GoCasa page</h2>
+  <p>Open the GoCasa page, press Ctrl+Shift+J and paste:</p>
+  <pre id="snippet"></pre>
+</section>
+
+<section>
+  <h2>5. Wall window</h2>
+  <input type="text" id="server" placeholder="http://192.168.1.50:8080/">
+  <button id="wall">Open full screen</button>
+</section>
+
+<section>
+  <h2>6. Start on boot</h2>
+  <label><input type="checkbox" id="autostart"> On startup: keep-awake, start the offscreen camera, open the Wall window</label>
+</section>
+
+<section>
+  <h2>Log</h2>
+  <button id="copy">Copy log</button>
+  <button id="clear">Clear log</button>
+  <pre id="log"></pre>
+</section>
+
+<script src="test.js"></script>

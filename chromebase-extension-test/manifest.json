@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "GoCasa Chromebase test",
+  "version": "0.1",
+  "description": "Throwaway hardware test for the Display app extension build. Not the Display app.",
+  "permissions": ["power", "offscreen", "storage", "idle"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Open the test page" },
+  "externally_connectable": { "matches": ["http://*/*"] }
+}
