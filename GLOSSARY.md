@@ -1,11 +1,11 @@
 # GoCasa Android
 
-The native companion to GoCasa that turns a tablet or Chromebook into a Wall display. Terms borrowed from GoCasa keep GoCasa's meaning.
+The companion to GoCasa that turns a tablet or Chromebook into a Wall display. Terms borrowed from GoCasa keep GoCasa's meaning.
 
 ## Language
 
 **Display app**:
-The native app that turns a device into a Wall display. It comes as an APK build for Android and an Extension build for ChromeOS.
+The app that turns a device into a Wall display. It comes as an APK build for Android and an Extension build for ChromeOS.
 _Avoid_: Kiosk, kiosk app, shell, wrapper
 
 **APK build**:
@@ -33,7 +33,7 @@ How much motion the camera must see before a Camera wake. Set per device in Disp
 _Avoid_: Threshold, motion level, trigger level
 
 **Bridge**:
-The channel between GoCasa's page and the Display app on the same device. The page reports what it is showing, and the app reports a Camera wake. GoCasa's server never contacts the Display app.
+The channel between GoCasa's page and the Display app on the same device. The page reports what it is showing, and the app reports a Camera wake. GoCasa's server never contacts the Display app directly.
 _Avoid_: JS interface, control channel, API
 
 **Server discovery**:
